@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style_home.css">
+</head>
+<body>
+
+  <% if (user) { %>
+    <h1>Welcome, <%= user.name %>!</h1>
+    <p>You are logged in.</p>
+    <a href="/logout">Logout</a>
+<% } else { %>
+    <h1>Welcome to Our Website</h1>
+    <p>Please <a href="/login">Login</a> or <a href="/register">Register</a>.</p>
+<% } %>
+
+  <div class="nav-container">
+    <div class="logo-section">
+      <!-- Placeholder for logo and government symbol -->
+      <div class="logo">
+        <img src="/image/rac_logo.png" alt="RAC logo" />
+      </div>
+      <div class="text-symbol">
+        <img src="/image/siteTitle_n.png" alt="Government symbol" />
+      </div>
+    </div>
+    <div class="gov-logo">
+      <img src="/image/Emblem_of_India.png" alt="">
+    </div>
+    <a class="login-section">
+      <a href="/login"><button class="btn login-btn" >Login</button></a>
+      <a href="/logout"><button class="btn contact-btn">Logout</button></a>
+      <!-- <button class="btn lang-btn"></button> -->
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About RAC</a></li>
+      <li><a href="#">Programmes</a></li>
+      <li><a href="#">Career Opportunity</a></li>
+      <li><a href="#">DRDS</a></li>
+      <li><a href="#">FAQs</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="btn caution-btn">CAUTION / चेतावनी</button>
+      <a href="/application"><button class="btn drdo-website-btn">Apply Here</button></a>
+      <div class="search-container">
+        <input type="text" placeholder="Search" />
+        <button class="search-btn">Search</button>
+      </div>
+    </div>
+  </nav>
+  <!-- ------------------------------ -->
+  <section class="main-section">
+  
+  <marquee behavior="scroll" direction="right" class="marquee-text" >*FINAL EXTENSION - ADMISSION NOTICE FOR B.BCA/BBA/BMS/BBM/MBA (Integrated)/ MCA (Integrated) FOR ACADEMIC YEAR 2024-25*</marquee>
+    
+  </section>
+  <section class="text">
+    <div class="container">
+      <!-- Left Section  -->
+      <div class="leftSection">
+        <div class="notice-board">
+          <h2>Notice</h2>
+          <ul>
+            <li>Admission Notice for Regular Students 2024-25</li>
+            <li>Few Vacancies in Computer Allied Courses</li>
+          </ul>
+        </div>
+  
+        
+        <div class="upcoming-events">
+          <h2>Upcoming Events</h2>
+          <ul>
+            <li><strong>04th Oct 2024</strong> - SIH Hackathon '24</li>
+            <li><strong>25th Sep 2024</strong> - Blood Donation Camp</li>
+            <li><strong>20th Sep 2024</strong> - Railway Job Application Date</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Right Section  -->
+      <div class="rightSection">
+        <h2>Latest Educational News</h2>
+      <p>The Ministry of Education has announced a new scholarship program for meritorious students.</p>
+      <p>The application process for the program will start from 1st October 2024.</p>
+      <p>Interested students can apply through our website.</p>
+      <button><a href="/apply/index.html">More Info</a></button>
+        </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="about-content">
+      <p>Welcome to our website! We are a team of dedicated professionals who are passionate about providing high-quality services to our clients. Our website is designed to provide you with a user-friendly and informative experience, and we hope that you will find everything you need here.</p>
+    </div>
+    <div class="about-image">
+      <img src="/image/abou.png" alt="About Us">
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <!-- Footer Section -->
+<!-- Footer Section -->
+<footer>
+  <div class="footer-container">
+    <div class="contact-info">
+      <div class="address">
+        <h4>Address</h4>
+        <p>123 Main St, Anytown, USA 12345</p>
+      </div>
+      <div class="website-link">
+        <h4>Website</h4>
+        <a href="https://www.example.com">www.example.com</a>
+      </div>
+      <div class="helpline">
+        <h4>Helpline</h4>
+        <p>1-800-EXAMPLE (1-800-392-7539)</p>
+      </div>
+    </div>
+    <div class="inline-links">
+      <div class="quick-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="social-media">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="https //facebook.com" target="facebook"><i class="fa fa-facebook-f"></i></a></li>
+          <li><a href="https //twitter.com" target="twitter"><i class="fa  fa-twitter"></i></a></li>
+          <li><a href="https://www.instagram.com/accounts/login/?hl=en" target="instagram"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="https://www.youtube.com" target="youtube"><i class="fa fa-youtube"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <p>&copy; 2024 Your Institution. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

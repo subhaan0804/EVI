@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Result</title>
+    <style>
+        body {
+            
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .document-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .document-list li {
+            margin-bottom: 10px;
+        }
+        .document-list a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        .document-list a:hover {
+            text-decoration: underline;
+        }
+        /* ... (keep existing styles) ... */
+        .download-btn{
+            display: block;
+            align-items: center;
+            margin: 20px auto;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container" id="pdf-content">
+        <h1>User Information</h1>
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><%= user.name %></td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td><%= user.dob %></td>
+            </tr>
+            <tr>
+                <td>10th Roll Number</td>
+                <td><%= user.roll10 %></td>
+            </tr>
+            <tr>
+                <td>10th Passing Year</td>
+                <td><%= user.passYear10 %></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><%= user.email %></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td><%= user.phoneno %></td>
+            </tr>
+            <!-- Add any additional fields from your MongoDB schema here -->
+        </table>
+
+        <h2>Uploaded Documents</h2>
+        <table>
+            <tr>
+                <th>Document</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Resume</td>
+                <td style="text-align: center;">
+                    <% if (uploadedFiles && uploadedFiles.resume) { %>
+                        <% if (uploadedFiles.resume.verified) { %>
+                            <span style="font-size: 20px;">✅</span>
+                        <% } else { %>
+                            <span style="font-size: 20px;">❌</span>
+                        <% } %>
+                    <% } else { %>
+                        Not Uploaded
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <td>EWS Certificate</td>
+                <td style="text-align: center;">
+                    <% if (uploadedFiles && uploadedFiles.ews) { %>
+                        <% if (uploadedFiles.ews.verified) { %>
+                            <span style="font-size: 20px;">✅</span>
+                        <% } else { %>
+                            <span style="font-size: 20px;">❌</span>
+                        <% } %>
+                    <% } else { %>
+                        Not Uploaded
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <td>Caste Certificate</td>
+                <td style="text-align: center;">
+                    <% if (uploadedFiles && uploadedFiles.caste) { %>
+                        <% if (uploadedFiles.caste.verified) { %>
+                            <span style="font-size: 20px;">✅</span>
+                        <% } else { %>
+                            <span style="font-size: 20px;">❌</span>
+                        <% } %>
+                    <% } else { %>
+                        Not Uploaded
+                    <% } %>
+                </td>
+            </tr>
+            <tr>
+                <td>GATE Score</td>
+                <td style="text-align: center;">
+                    <% if (uploadedFiles && uploadedFiles.gate) { %>
+                        <% if (uploadedFiles.gate.verified) { %>
+                            <span style="font-size: 20px;">✅</span>
+                        <% } else { %>
+                            <span style="font-size: 20px;">❌</span>
+                        <% } %>
+                    <% } else { %>
+                        Not Uploaded
+                    <% } %>
+                </td>
+            </tr>
+        </table>
+
+        <ul class="document-list">
+            <!-- Keep your existing download links here -->
+            <% if (user.resume) { %>
+                <li>Resume: <a href="/download/<%= user.resume %>">Download Resume</a></li>
+            <% } %>
+            <% if (user.ews) { %>
+                <li>EWS Certificate: <a href="/download/<%= user.ews %>">Download EWS Certificate</a></li>
+            <% } %>
+            <% if (user.caste) { %>
+                <li>Caste Certificate: <a href="/download/<%= user.caste %>">Download Caste Certificate</a></li>
+            <% } %>
+            <% if (user.gate) { %>
+                <li>GATE Score: <a href="/download/<%= user.gate %>">Download GATE Score</a></li>
+            <% } %>
+        </ul>
+    </div>
+    <button class="download-btn" onclick="downloadPDF()">Download as PDF</button>
+
+    <script>
+        function downloadPDF() {
+            const element = document.getElementById('pdf-content');
+            const opt = {
+                margin: 10,
+                filename: 'user_result.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            html2pdf().from(element).set(opt).save();
+        }
+    </script>
+</body>
+</html>

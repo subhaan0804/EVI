@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rac application</title>
+    <link rel="stylesheet" href="/css/style_register.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="apply_box">
+        <h1>
+          Registration Form
+        </h1>
+        <form action="/register" method="post">
+          <div class="form_container">
+            <div class="form_control">
+              <label for="name"> Name </label>
+              <input
+                id="name"
+                name="name"
+                placeholder="Enter Name..."
+              />
+            </div>
+            <div class="form_control">
+              <label for="dob">Date of Birth</label>
+              <input
+                type="date"
+                id="dob"
+                name="dob"
+                placeholder="Enter Date of Birth..."
+              />
+            </div>  
+              <div class="form_control">
+                <label for="rollno">10<sup>th</sup> Roll No</label>
+                <input
+                  type="number"
+                  id="roll10"
+                  name="roll10"
+                  placeholder="Enter Roll No..."
+                />
+              </div>
+                <div class="form_control">
+                  <label for="passYear10">10<sup>th</sup> Passing Year</label>
+                  <select
+                    id="passYear10"
+                    name="passYear10"
+                    placeholder="Enter Passing Year...">
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                    <option value="2013">2013</option>
+                    <option value="2012">2012</option>
+                    <option value="2011">2011</option>
+                    <option value="2010">2010</option>
+                    <option value="2009">2009</option>
+                    <option value="2008">2008</option>
+                    <option value="2007">2007</option>
+                    <option value="2006">2006</option>
+                    <option value="2005">2005</option>
+                    <option value="2004">2004</option>
+                    <option value="2003">2003</option>
+                    <option value="2002">2002</option>
+                    <option value="2001">2001</option>
+                    <option value="2000">2000</option>
+                    <option value="1999">1999</option>
+                    <option value="1998">1998</option>
+                    <option value="1997">1997</option>
+                    <option value="1996">1996</option>
+                    <option value="1995">1995</option>
+                    <option value="1994">1994</option>
+                    <option value="1993">1993</option>
+                    <option value="1992">1992</option>
+                    <option value="1991">1991</option>
+                    <option value="1990">1990</option>
+                    <option value="1989">1989</option>
+                    <option value="1988">1988</option>      
+                    <option value="1987">1987</option>
+                  </select>
+                    
+                  
+                </div>
+            <div class="form_control">
+              <label for="email"> Email </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter Email..."
+              />
+            </div>
+            <div class="form_control">
+              <label for="phoneno"> Phone No </label>
+              <input
+                type="number"
+                id="phoneno"
+                name="phoneno"
+                placeholder="Enter Phone No..."
+              />
+            </div>
+            <div class="form_control">
+              <label for="Password"> Password </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter Password..."
+              />
+            </div>
+            <div class="form_control">
+              <label for="confirm_password"> Confirm Password </label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Enter Confirm Password..."/>
+            </div>
+            <div class="form_control">
+              <label for="aadhar">Aadhar</label>
+              <input
+              type="number"
+              id="aadhar"
+              name="aadhar"
+              placeholder="Enter Aadhar No..."
+              />
+
+            </div>
+            <div class="form_control">
+              <label for="address"> Address </label>
+              <textarea
+                id="address"
+                name="address"
+                row="4"
+                cols="50"
+                placeholder="Enter Address"
+              ></textarea>
+            </div>
+          </div>
+          <input type="submit" id="submit-btn">
+        </form>
+      <p></p><a href="login">Login</a></p>
+      <p>*All fields are required</p>
+      </div>
+    </div>
+  </body>
+</html>

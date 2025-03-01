@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: beige;
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.apply_box {
+  max-width: 70%;
+  height: auto;
+  padding: 20px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 50px;
+  box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+  border-radius: 10px;
+}
+
+.title_small {
+  font-size: 20px;
+}
+
+.form_container {
+  margin-top: 20px;
+  display:flex;
+  /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+  gap: 5px;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex-direction: row;
+}
+.form_control {
+  /* margin:0 0px; */
+  /* display: flex; */
+  flex-direction: column;
+}
+
+label {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+input,
+select,
+textarea,
+file {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+input:focus {
+  outline-color: red;
+}
+
+.button_container {
+  display: flex;
+
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+button {
+  background-color: red;
+  border: transparent solid 2px;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 8px;
+  transition: 0.3s ease-in;
+}
+button:hover {
+  background-color: #ccc;
+  border: 2px solid red;
+  color: black;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+.textarea_control {
+  grid-column: 1 / span 2;
+}
+.textarea_control textarea {
+  width: 100%;
+}
+
+@media (max-width: 460px) {
+  .textarea_control {
+    grid-column: 1 / span 1;
+  }
+} 
+.form_control {
+  display: flex;
+  flex-direction: column;
+  width: 30%; /* added this to make the upload buttons next to each other */
+  margin: 20px; /* added this to add some space between the upload buttons */
+}
+
+.form_control input[type="file"] {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  width: 100%; /* added this to make the upload button take the full width */
+}
+
+.form_control label {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.form_container {
+  margin-top: 20px;
+  display: flex; /* changed from grid to flex */
+  flex-wrap: wrap; /* added this to make the upload buttons wrap to the next line */
+  justify-content: space-evenly;
+  align-items: center;
+}
+.app-btn{
+ margin-left: 47%;
+ background-color: red;
+ color: white;
+ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ transition: 0.3s ease-out;
+}
+.app-btn:hover{
+  background-color: beige;
+  color: black;
+  transition: 0.3s ease-in;
+}

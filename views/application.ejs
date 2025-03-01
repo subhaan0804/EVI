@@ -1,0 +1,103 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="css/style_app.css" />
+</head>
+<body>
+    <div class="apply_box">
+        <div>
+            <h1>
+                Application
+                <span class="title_small">(official)</span>
+            </h1>
+        </div>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="form_container">
+                <div class="form_control">
+                    <label for="resume">Upload Resume</label>
+                    <input type="file" id="resume" name="resume" accept=".pdf,.jpg,.jpeg,.png" required />
+                </div>
+                <div class="form_control">
+                    <label for="ews">Upload EWS Certificate</label>
+                    <input type="file" id="ews" name="ews" accept=".pdf,.jpg,.jpeg,.png" />
+                </div>
+                <div class="form_control">
+                    <label for="caste">Upload Caste Certificate</label>
+                    <input type="file" id="caste" name="caste" accept=".pdf,.jpg,.jpeg,.png" />
+                </div>
+                <div class="form_control">
+                    <label for="gate">Upload GATE Score Card</label>
+                    <input type="file" id="gate" name="gate" accept=".pdf,.jpg,.jpeg,.png" />
+                </div>
+            </div>
+            <input class="app-btn" type="submit" value="Apply">
+        </form>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Application Form</title>
+  <link rel="stylesheet" href="/css/style_app.css" />
+  <style>
+    .verification-status {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="apply_box">
+    <h1>
+      Job Application
+      <span class="title_small">(Web)</span>
+    </h1>
+    <h2>Welcome, <%= user.name %>!</h2>
+    <p>Your date of birth: <%= user.dob %></p>
+    <form id="upload-form" action="/upload" enctype="multipart/form-data" method="post">
+      <div class="form_container">
+        <div class="form_control">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required value="<%= user.name %>" readonly/>
+        </div>
+        <div class="form_control">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required readonly value="<%= user.dob %>" />
+        </div>
+        <div class="form_control">
+          <label for="resume">Resume (PDF)</label>
+          <input type="file" id="resume" name="resume" accept=".pdf, .jpg, .jpeg, .png" required />
+          <span class="verification-status" id="resume-status"></span>
+        </div>
+        <div class="form_control">
+          <label for="ews">EWS Certificate</label>
+          <input type="file" id="ews" name="ews" accept=".pdf,.jpg,.jpeg,.png" />
+          <span class="verification-status" id="ews-status"></span>
+        </div>
+        <div class="form_control">
+          <label for="caste">Caste Certificate</label>
+          <input type="file" id="caste" name="caste" accept=".pdf,.jpg,.jpeg,.png" />
+          <span class="verification-status" id="caste-status"></span>
+        </div>
+        <div class="form_control">
+          <label for="gate">GATE Certificate</label>
+          <input type="file" id="gate" name="gate" accept=".pdf,.jpg,.jpeg,.png" />
+          <span class="verification-status" id="gate-status"></span>
+        </div>
+      </div>
+      <input type="submit" id="submit-btn" value="Apply">
+    </form>
+    <a href="/home">Back to home</a>
+  </div>
+  <script src="/js/application.js"></script>
+</body>
+</html>

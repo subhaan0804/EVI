@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 350px;
+}
+
+h2 {
+    text-align: center;
+    color: #1877f2;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #90949c;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #1877f2;
+}
+
+.forgot-pass {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.forgot-pass a {
+    color: blue;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn {
+    width: 100%;
+    background-color: red;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+}
+
+.btn:hover {
+    background-color: grey;
+    border: 1px solid black;
+    transition: 0.3s ease-in;
+}
+
+.link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.link a {
+    color: #1877f2;
+    text-decoration: none;
+    font-weight: bold;
+}
+.header{
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;   
+}
